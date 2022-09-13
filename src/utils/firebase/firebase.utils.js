@@ -1,6 +1,12 @@
+import userEvent from '@testing-library/user-event';
 import {initializeApp} from 'firebase/app';
 import {getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider} from 'firebase/auth'
-
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc
+} from 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyBW3ibl6SNLRZGzbYo-mK9y3EVeh8V6wU8",
@@ -21,4 +27,30 @@ const firebaseConfig = {
   });
 
   export const auth = getAuth();
-  export const signInWithGooglePopup = () => signInWithGooglePopup(auth, provider);
+  export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+  export const db = getFirestore();
+
+  export const createUserDocumentFromAuth = async (userAuth) => {
+      const userDocRef = doc(db, 'users', userAuth.uid);
+      const userSnapshot = await getDoc(userDocRef);
+     
+      
+      if(!userSnapshot.exists())  {
+          const {displayName, email} = userAuth;
+          const createdAt = new Date();
+
+          try {
+            await setDoc(userDocRef, {
+              displayName,
+              email,
+              createdAt
+            });
+          } catch(error) {
+            console.log('error creating the user', error.message);
+          }
+      }
+
+      return userDocRef;
+      
+
+  }
