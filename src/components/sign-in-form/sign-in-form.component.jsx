@@ -13,24 +13,23 @@ const SignInForm = () => {
 
    const [formField, setFormFields] = useState(defaultFormFields);
    const {email, password, } = formField;
-
-   console.log(formField);
+   
 
    const resetform = () => {
         setFormFields(defaultFormFields);
    };
 
     const signInWithGoogle = async () => { 
-    const {user} = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
+       
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
        
         try {
-            const response = await signInAuthUserWithEmailAndPassword(email, password);
-            console.log(response);
+            const {user} = await signInAuthUserWithEmailAndPassword(email, password);
+          
             resetform();
         } catch(error){
             switch(error.code) {
@@ -74,7 +73,7 @@ const SignInForm = () => {
                 
                 <div className="buttons-container">
                     <Button type="submit">Sign in</Button>    
-                    <Button type='button' buttonType='google' onClick={signInWithGoogle}>Google sign in</Button>
+                    <Button type='button' buttonType='google' onClick={signInWithGoogle}>Sign in google</Button>
                 </div>
                 
             </form>
