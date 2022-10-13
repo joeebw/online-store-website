@@ -33,7 +33,7 @@ const firebaseConfig = {
   export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
   export const db = getFirestore();
 
-  export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
+  export const addCollectionAndDocuments = async (collectionKey, objectToAdd, field) => {
     const collectionRef = collection(db, collectionKey);
     const batch = writeBatch(db);
 
