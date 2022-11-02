@@ -1,26 +1,34 @@
-import {initializeApp} from 'firebase/app';
-import {getAuth, signInWithRedirect ,signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from 'firebase/auth'
+import { initializeApp } from 'firebase/app';
+import {
+  getAuth,
+  signInWithRedirect,
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from 'firebase/auth';
 import {
   getFirestore,
   doc,
-  setDoc,
   getDoc,
+  setDoc,
   collection,
-  writeBatch, 
+  writeBatch,
   query,
-  getDocs
-} from 'firebase/firestore'
+  getDocs,
+} from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBW3ibl6SNLRZGzbYo-mK9y3EVeh8V6wU8",
-    authDomain: "web-store-app-4ea5b.firebaseapp.com",
-    projectId: "web-store-app-4ea5b",
-    storageBucket: "web-store-app-4ea5b.appspot.com",
-    messagingSenderId: "210578348830",
-    appId: "1:210578348830:web:ecc7cebfeb83b311b2470f"
+  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
+  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
+  projectId: 'crwn-clothing-db-98d4d',
+  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
+  messagingSenderId: '626766232035',
+  appId: '1:626766232035:web:506621582dab103a4d08d6',
 };
-  
- 
+
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();

@@ -79,10 +79,10 @@ export function* signUp({ payload: { email, password, displayName } }) {
 }
 
 export function* signOut() {
-  try{
+  try {
     yield call(signOutUser);
     yield put(signOutSuccess());
-  } catch(error) {
+  } catch (error) {
     yield put(signOutFailed(error));
   }
 }
@@ -122,7 +122,6 @@ export function* userSagas() {
     call(onEmailSignInStart),
     call(onSignUpStart),
     call(onSignUpSuccess),
-    call(onSignOutStart)
-    
+    call(onSignOutStart),
   ]);
 }
