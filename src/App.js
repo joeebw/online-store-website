@@ -13,7 +13,6 @@ import { checkUserSession } from './store/user/user.action';
 
 
 function App() {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
