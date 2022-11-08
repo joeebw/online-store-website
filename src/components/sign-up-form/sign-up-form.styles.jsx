@@ -8,4 +8,9 @@ export const SignUpContainer = styled.div`
   h2 {
     margin: 10px 0;
   }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90vw;
+  }
 `;

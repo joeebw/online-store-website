@@ -4,7 +4,12 @@ export const CategoryContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
-  row-gap: 50px;
+  row-gap: 0px;
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
 `;
 
 export const Title = styled.h2`
