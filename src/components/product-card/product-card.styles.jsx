@@ -19,7 +19,7 @@ export const ProductCartContainer = styled.div`
     width: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 320px;
+    top: 275px;
     display: none;
 
     @media screen and (max-width: 800px) {
@@ -40,6 +40,10 @@ export const ProductCartContainer = styled.div`
       opacity: 0.85;
       display: flex;
     }
+  }
+
+  @media screen and (max-width: 800px){
+    height: 40vh;
   }
 
 `;

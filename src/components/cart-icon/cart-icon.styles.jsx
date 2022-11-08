@@ -21,4 +21,8 @@ export const ItemCount = styled.span`
   font-size: 12px;
   font-weight: bold;
   bottom: 11px;
+
+  @media screen and (max-width: 800px){
+    bottom: 10px;
+  }
 `;
