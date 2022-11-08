@@ -17,11 +17,11 @@ export const NavigationContainer = styled.div`
 
 export const LogoContainer = styled(Link)`
   height: 100%;
-  width: 100px;
+  width: 95px;
   padding: 0px 22px ;
 
   @media screen and (max-width: 800px) {
-    width: 50px;
+    width: 40px;
     padding: 0;  
   }
 
