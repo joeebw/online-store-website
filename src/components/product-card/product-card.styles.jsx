@@ -18,12 +18,12 @@ export const ProductCartContainer = styled.div`
   button {
     width: 80%;
     opacity: 0.7;
-    position: absolute;
-    top: 275px;
+    position: relative;
+    bottom: 170px;
     display: none;
 
     @media screen and (max-width: 800px) {
-      top: 176px;
+      bottom: 115px;
       display: block;
       opacity 0.9;
     }
