@@ -8,16 +8,17 @@ export const CartIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-bottom: 5px;
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
   }
 `;
 
 export const ItemCount = styled.span`
   position: absolute;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
-  bottom: 12px;
+  bottom: 11px;
 `;

@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 export const CategoryPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+
+  @media screen and (max-width: 800px){
+    margin-bottom: 0;
+  }
 `;
 
 export const Title = styled(Link)`
@@ -18,4 +22,11 @@ export const Preview = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
+
 `;

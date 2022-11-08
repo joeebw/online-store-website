@@ -8,8 +8,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import App from "./App";
 import { store, persistor } from "./store/store";
 import { stripePromise } from "./utils/stripe/stripe.utils";
-
-import "./index.scss";
+import { Globalstyle } from "./global.styles";
+// import "./index.scss";
 
 const rootElement = document.getElementById("root");
 
@@ -19,7 +19,8 @@ render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Elements stripe={stripePromise}>
-            <App />
+             <Globalstyle/>
+              <App/>
           </Elements>
         </BrowserRouter>
       </PersistGate>
