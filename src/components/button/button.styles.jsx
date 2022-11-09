@@ -27,7 +27,7 @@ export const BaseButton = styled.button`
   @media screen and (max-width: 800px) {
     min-width: 136px;
     height: 41px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     line-height: 0;
 
   }  
